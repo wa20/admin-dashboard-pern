@@ -28,7 +28,7 @@ let cars = [
     { id: 10, make: 'Hyundai', model: 'Elantra', year: 2025, price: 100000 },
 ]
 
- 
+  
 
 
 // Router route: GET /api/v1/cars/ (when router is mounted)

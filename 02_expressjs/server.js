@@ -7,6 +7,16 @@ const router = express.Router()
 app.use(express.json())
 
 
+app.use((req, res, next) => {
+   const timestamp = new Date().toISOString();
+ 
+   console.log(`[${timestamp}] ${req.method} ${req.url}`) 
+   next()
+})
+
+ 
+
+
 let cars = [
     { id: 1, make: 'Toyota', model: 'Corolla', year: 2020, price: 10000 },
     { id: 2, make: 'Ford', model: 'F150', year: 2021, price: 20000 },
@@ -20,12 +30,6 @@ let cars = [
     { id: 10, make: 'Hyundai', model: 'Elantra', year: 2025, price: 100000 },
 ]
 
- 
-
-
-router.get('/', (req, res) => { 
-    res.json(cars)
-})
 
 app.get("/", (req, res) => {
     res.send("<h1>Hello World, pretending  to be a server using express</h1>")
