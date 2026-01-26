@@ -23,7 +23,9 @@ const App = () => {
     <div>
       <h1>Welcome to the car store</h1>
       <ul>
-        < Car />
+        { cars.map( car => 
+          < Car key={car.id} { ...car } />
+        )}
       </ul>
     </div>
   )
